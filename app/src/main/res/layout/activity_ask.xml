@@ -1,44 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#F2FAFC"
     android:layout_height="match_parent"
     tools:context=".AskActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card1"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp">
+        android:layout_height="wrap_content">
         <TextView
+            android:id="@+id/textv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textStyle="normal"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="16sp"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:fontFamily="@font/gabriela"
+            android:textSize="14sp"
             android:textAllCaps="true"
             android:text="Nearby Places"/>
-    </androidx.cardview.widget.CardView>
+       
+    
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/restaurants"
+                android:layout_below="@+id/textv"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:padding="10dp"
+                    android:background="@drawable/img_corner" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/restaurants"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="10dp"
-        android:layout_below="@id/card1"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="0dp"
+                    android:fontFamily="@font/gabriela"
+                    android:gravity="center"
+                    android:text="Restaurants"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:fontFamily="@font/gabriela" />
+            </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/atms"
+                    android:layout_below="@+id/restaurants"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+    
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textStyle="normal"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        app:fontFamily="@font/gabriela"
+                        android:elevation="0dp"
+                        android:textAllCaps="false"
+                        android:text="ATM"/>
+                </androidx.cardview.widget.CardView>
+
+        
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/petrol"
+                    android:layout_below="@+id/atms"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:elevation="0dp"
+                        android:fontFamily=""
+                        android:gravity="center"
+                        android:text="Petrol"
+                        android:textAllCaps="false"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:fontFamily="@font/gabriela" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/petrol"
+                    android:id="@+id/shopingCenter"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textStyle="normal"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        app:fontFamily="@font/gabriela"
+                        android:elevation="0dp"
+                        android:textAllCaps="false"
+                        android:text="Shoping Centers"/>
+                </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:padding="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-        <TextView
+        android:layout_height="match_parent"
+        android:background="@drawable/corner"
+        android:clipToPadding="true"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="55dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textStyle="normal"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:elevation="0dp"
-            android:textAllCaps="false"
-            android:text="Restaurants"/>
-    </androidx.cardview.widget.CardView>
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                app:cardCornerRadius="3dp"
+                app:cardBackgroundColor="#CAC7C7"
+                android:layout_marginTop="5dp"
+                app:cardElevation="0dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="5dp"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                app:fontFamily="@font/gabriela"
+                android:textSize="18dp"
+                android:layout_centerHorizontal="true"
+                android:text="Explore Nearby.."/>
 
+        </RelativeLayout>
 
+    </androidx.core.widget.NestedScrollView>
 
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
